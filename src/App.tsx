@@ -1,14 +1,15 @@
 import {Routes, Route} from 'react-router-dom'
+import Header from './components/header';
 import Home from './pages/home'
 import Resume from './pages/resume'
 import Project from './pages/project'
 import Blog from './pages/blog'
 
 function App() {
+    return (
+        <div className="min-h-screen w-full flex flex-col">
+            <Header/>
 
-  return (
-    <>
-        <div className="">
             <main className="px-4 sm:px-6 py-8 max-w-7xl mx-auto w-full flex-grow ">
                 <Routes>
                     <Route path="/" element={<Home/>}/>
@@ -17,9 +18,10 @@ function App() {
                     <Route path="/blog" element={<Blog/>}/>
                 </Routes>
             </main>
+
         </div>
-    </>
-  )
+    );
 }
+
 
 export default App
