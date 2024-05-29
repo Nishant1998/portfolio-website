@@ -4,6 +4,7 @@ import Home from './pages/home'
 import Resume from './pages/resume'
 import Project from './pages/project'
 import Blog from './pages/blog'
+import Footer from './components/footer.tsx';
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                 </Routes>
             </main>
 
+            <Footer/>
         </div>
     );
 }
