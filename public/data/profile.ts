@@ -16,4 +16,10 @@ export const PROFILE = {
         'Open Source Contributor',
         'Tech Blogger',
     ],
+
+    stats: {
+        experience: 4, // years of experience
+        projects: 12,  // total projects
+        companies: 3,  // companies worked at
+    },
 };
