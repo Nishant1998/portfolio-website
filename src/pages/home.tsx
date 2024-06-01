@@ -1,6 +1,6 @@
 import {useRef, useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {LuGithub, LuLinkedin, LuMail, LuExternalLink} from 'react-icons/lu';
+import {LuGithub, LuLinkedin, LuMail, LuExternalLink, LuMapPin} from 'react-icons/lu';
 import {FiChevronDown} from "react-icons/fi";
 import {PROFILE} from "../../public/data/profile.ts";
 
@@ -36,6 +36,23 @@ const Home = () => {
         if (aboutRef.current) observer.observe(aboutRef.current);
         return () => {
             if (aboutRef.current) observer.unobserve(aboutRef.current);
+        };
+    }, []);
+
+    // Animate Contact Me section on scroll
+    const contactRef = useRef<HTMLDivElement>(null);
+    const [showContact, setShowContact] = useState(false);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setShowContact(entry.isIntersecting);
+            },
+            {threshold: 0.2}
+        );
+
+        if (contactRef.current) observer.observe(contactRef.current);
+        return () => {
+            if (contactRef.current) observer.unobserve(contactRef.current);
         };
     }, []);
 
@@ -172,6 +189,61 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Contact Section */}
+            <section id="contact"
+                     ref={contactRef}
+                     className={`w-full bg-gray-50 px-4 pb-16 sm:px-6 lg:px-8 text-gray-950 scroll-mt-24 transition-all duration-700 ${
+                         showContact ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                <div className="max-w-3xl mx-auto text-center">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-950 mb-1">Contact</h2>
+                    <span className="block text-base sm:text-lg text-gray-700 mb-12">
+      Get in touch with me
+    </span>
+
+                    <div className="flex flex-col gap-8 text-left text-sm sm:text-base">
+                        {/* Email */}
+                        <div className="flex items-start gap-4">
+                            <LuMail className="text-green-400 text-3xl mt-1"/>
+                            <div>
+                                <p className="text-xl font-semibold text-gray-950 mb-1">Email</p>
+                                <p className="text-gray-700 text-base">{PROFILE.email}</p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start gap-4">
+                            <LuLinkedin className="text-green-400 text-3xl mt-1"/>
+                            <div>
+                                <p className="text-xl font-semibold text-gray-950 mb-1">LinkedIn</p>
+                                <p className="text-gray-700 text-base">{PROFILE.social.linkedin}</p>
+
+                            </div>
+                        </div>
+
+
+                        <div className="flex items-start gap-4">
+                            <LuGithub className="text-green-400 text-3xl mt-1"/>
+                            <div>
+                                <p className="text-xl font-semibold text-gray-950 mb-1">GitHub</p>
+                                <p className="text-gray-700 text-base">{PROFILE.social.github}</p>
+                            </div>
+                        </div>
+
+
+                        {/* Location */}
+                        <div className="flex items-start gap-4">
+                            <LuMapPin className="text-green-400 text-3xl mt-1"/>
+                            <div>
+                                <p className="text-xl font-semibold text-gray-950 mb-1">Location</p>
+                                <p className="text-gray-700 text-base">Based in {PROFILE.location}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
         </>
     );
 };
