@@ -1,6 +1,7 @@
 import {resumeData} from '../../public/data/resume';
 import EducationCard from '../components/EducationCard';
 import ExperienceCard from '../components/ExperienceCard';
+import SkillGroupCard from '../components/SkillGroupCard';
 import {useEffect} from "react";
 
 const Resume = () => {
@@ -32,6 +33,17 @@ const Resume = () => {
                     ))}
                 </div>
 
+                {/* Skills Section */}
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-950 mt-12 mb-6">Skills</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    {Object.entries(resumeData.skills).map(([group, items]) => (
+                        <SkillGroupCard
+                            key={group}
+                            title={group.replace(/_/g, ' ').replace(/\band\b/gi, '&')}
+                            items={items}
+                        />
+                    ))}
+                </div>
             </div>
         </section>
     );

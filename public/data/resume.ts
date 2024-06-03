@@ -32,4 +32,61 @@ export const resumeData = {
             logo: 'https://placehold.co/80x80?text=LOGO',
         },
     ],
+
+    skills: {
+
+        Languages: [
+            'Python', 'C++', 'Java', 'SQL', 'Shell Scripting',
+        ],
+
+        Data_and_Visualization: [
+            'Pandas',
+            'NumPy',
+            'Matplotlib',
+            'Seaborn',
+            'Plotly',
+            'Tableau',
+            'Power BI',
+        ],
+
+        Data_Science_and_AI: [
+            'Logistic Regression',
+            'Decision Trees',
+            'Random Forest',
+            'XGBoost',
+            'scikit-learn',
+            'CNNs',
+            'Vision Transformers',
+            'TensorFlow',
+            'PyTorch',
+            'OpenCV',
+            'YOLO',
+        ],
+
+        Data_Engineering: [
+            'PostgreSQL',
+            'MySQL',
+            'MongoDB',
+            'Snowflake',
+        ],
+
+        Cloud_Architecture_and_MLOps: [
+            'FastAPI',
+            'Docker',
+            'MLflow',
+            'S3',
+            'GitHub Actions',
+            'GitHub',
+            'AWS',
+            'GCP',
+            'SageMaker',
+        ],
+
+        Miscellaneous: [
+            'Data Structures',
+            'Algorithms',
+            'OOP Principles',
+        ],
+
+    }
 };
