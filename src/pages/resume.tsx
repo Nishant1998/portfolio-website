@@ -1,5 +1,6 @@
 import {resumeData} from '../../public/data/resume';
 import EducationCard from '../components/EducationCard';
+import ExperienceCard from '../components/ExperienceCard';
 import {useEffect} from "react";
 
 const Resume = () => {
@@ -20,6 +21,14 @@ const Resume = () => {
                 <div className="w-full grid gap-6">
                     {resumeData.education.map((edu, idx) => (
                         <EducationCard key={idx} {...edu} />
+                    ))}
+                </div>
+
+                {/* Experience Section */}
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-950 mt-12 mb-6">Experience</h3>
+                <div className="w-full grid gap-6">
+                    {resumeData.experience.map((exp, idx) => (
+                        <ExperienceCard key={idx} {...exp} />
                     ))}
                 </div>
 

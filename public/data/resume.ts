@@ -16,4 +16,20 @@ export const resumeData = {
         },
     ],
 
+    experience: [
+        {
+            role: 'Job Title',
+            company: 'Company Name',
+            startMonth: 'January',
+            startYear: '2022',
+            endMonth: 'December',
+            endYear: '2024',
+            description: [
+                'Key responsibility or achievement in this role.',
+                'Another point about impact or project led.'
+            ],
+            techStack: ['Tech1', 'Tech2', 'Tech3'],
+            logo: 'https://placehold.co/80x80?text=LOGO',
+        },
+    ],
 };
