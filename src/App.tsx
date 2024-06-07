@@ -5,6 +5,7 @@ import Resume from './pages/resume'
 import Project from './pages/project'
 import Blog from './pages/blog'
 import Footer from './components/footer.tsx';
+import ProjectDetail from "./pages/ProjectDetail.tsx";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/resume" element={<Resume/>}/>
                     <Route path="/project" element={<Project/>}/>
+                    <Route path="/project/:title" element={<ProjectDetail/>}/>
                     <Route path="/blog" element={<Blog/>}/>
                 </Routes>
             </main>
