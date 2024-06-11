@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import {LuGithub, LuLinkedin, LuMail, LuExternalLink, LuMapPin} from 'react-icons/lu';
 import {FiChevronDown} from "react-icons/fi";
 import {PROFILE} from "../../public/data/profile.ts";
+import {projects} from '../../public/data/project';
+import ProjectCard from '../components/ProjectCard';
 
 const roles = PROFILE.roles;
 
@@ -189,6 +191,33 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+
+            {/* Featured Projects Section */}
+            <section className="w-full bg-gray-50 px-4 py-16 sm:px-6 lg:px-8 text-gray-950">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-center mb-1 text-gray-950">Featured Projects</h2>
+                    <p className="text-base text-center text-gray-700 mb-12">
+                        Selected Projects That Demonstrate My Skills and Experience
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {projects.filter(p => p.isFeatured).slice(0, 6).map((project, idx) => (
+                            <ProjectCard key={idx} {...project} />
+                        ))}
+                    </div>
+
+                    <div className="mt-10 flex justify-center">
+                        <Link
+                            to="/project"
+                            className="px-6 py-2 w-[180px] text-center border-2 !border-green-400 !text-white font-semibold rounded !bg-green-400 hover:scale-105 transition-transform duration-300"
+                        >
+                            View All Projects
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
 
             {/* Contact Section */}
             <section id="contact"
