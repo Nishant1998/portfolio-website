@@ -162,7 +162,7 @@ const Home = () => {
                             </p>
 
                             {/* Stats */}
-                            <div className="grid grid-cols-3 gap-4 text-center mb-6">
+                            {/*<div className="grid grid-cols-3 gap-4 text-center mb-6">
                                 <div>
                                     <p className="text-2xl font-bold text-green-400">{PROFILE.stats.experience}</p>
                                     <p className="text-sm text-gray-600">Years XP</p>
@@ -175,7 +175,7 @@ const Home = () => {
                                     <p className="text-2xl font-bold text-green-400">{PROFILE.stats.companies}</p>
                                     <p className="text-sm text-gray-600">Companies</p>
                                 </div>
-                            </div>
+                            </div>*/}
 
                             {/* CTA */}
                             <div className="flex justify-center lg:justify-start">

@@ -5,7 +5,7 @@ const navItems = [
     {name: 'Home', path: '/'},
     {name: 'Resume', path: '/resume'},
     {name: 'Project', path: '/project'},
-    {name: 'Blog', path: '/blog'},
+    // {name: 'Blog', path: '/blog'},
 ];
 
 const Header: React.FC = () => {
